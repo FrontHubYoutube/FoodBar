@@ -21,22 +21,19 @@ html {
     scroll-behavior: smooth;
     scroll-padding-top: 6rem;
 }
+html::-webkit-scrollbar {
+    width: 0.3rem;
+}
+html::-webkit-scrollbar-track {
+   background: transparent;
+}
+html::-webkit-scrollbar-thumb {
+   background: var(--red);
+}
 body {
     background:#f7f7f7;
 }
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 111;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: white;
-    padding: 2rem 9%;
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,0.1);
-}
+
 section {
     padding: 2rem 9%;
 }
@@ -80,6 +77,20 @@ section {
 .heading span {
     color: var(--red);
 }
+/* Начало навбара */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 111;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 2rem 9%;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,0.1);
+}
 header .logo {
     font-size: 2.5rem;
     font-weight: bolder;
@@ -109,6 +120,8 @@ header .navbar a:hover {
     padding: .5rem 1.5rem;
     display: none;
 }
+/* Конец навбара */
+/* Начало первой секции */
 .home {
     display: flex;
     flex-wrap: wrap;
@@ -131,6 +144,14 @@ header .navbar a:hover {
     padding: 1rem;
     animation: float 3s linear infinite;
 }
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0rem);
+    }
+    50% {
+        transform: translateY(3rem);
+    }
+}
 .home .content h3 {
     font-size: 5rem;
     color: #333;
@@ -141,6 +162,8 @@ header .navbar a:hover {
     padding: 1rem 0;
     font-weight: bold;
 }
+/* Конец первой секции */
+/* Начало второй секции */
 .speciality .box-container {
     display: flex;
     flex-wrap: wrap;
@@ -163,6 +186,9 @@ header .navbar a:hover {
     top: -100%;
     left: 0;
 }
+.speciality .box-container .box:hover .image {
+    top: 0;
+}
 .speciality .box-container .box .content {
     text-align: center;
     background: white;
@@ -182,12 +208,11 @@ header .navbar a:hover {
     color: #666;
     padding: 1rem 0;
 }
-.speciality .box-container .box:hover .image {
-    top: 0;
-}
 .speciality .box-container .box:hover .content {
     transform: translateY(100%);
 }
+/* Конец второй секции */
+/* Начало третьей секции */
 .popular .box-container {
     display: flex;
     flex-wrap: wrap;
@@ -229,6 +254,8 @@ header .navbar a:hover {
     font-size: 1.7rem;
     padding: 1rem .1rem;
 }
+/* Конец третьей секции */
+/* Начало четвертой секции */
 .gallery .box-container{
     display: flex;
     flex-wrap: wrap;
@@ -271,6 +298,8 @@ header .navbar a:hover {
     color: #666;
     padding: 1rem 0;
 }
+/* Конец четвертой секции */
+/* Начало пятой секции */
 .review .box-container {
     display: flex;
     flex-wrap: wrap;
@@ -310,6 +339,8 @@ header .navbar a:hover {
     color: #eee;
     padding: 1rem 0;
 }
+/* Конец пятой секции */
+/* Начало шестой секции */
 .order .row {
     padding: 2rem;
     box-shadow: 0 .5rem 1rem rgba(0,0,0,0.1);
@@ -360,6 +391,8 @@ header .navbar a:hover {
 .order .row form  .btn:hover {
     background: var(--red);
 }
+/* Конец шестой секции */
+/* Начало футера */
 .footer {
     background: #000;
     text-align: center;
@@ -379,6 +412,8 @@ header .navbar a:hover {
 .footer .rights span {
     color: var(--red);
 }
+/* Конец футера */
+/* Начало кнопки скролла */
 #scroll-top {
     position: fixed;
     top: -120%;
@@ -393,14 +428,7 @@ header .navbar a:hover {
 #scroll-top.active {
     top: calc(100% - 12rem);
 }
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0rem);
-    }
-    50% {
-        transform: translateY(3rem);
-    }
-}
+/* Конец кнопки скролла */
 @media (max-width:991px) {
     html {
         font-size: 55%;
